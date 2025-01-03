@@ -154,6 +154,56 @@ export default class Db2Driver
     });
   };
 
+  public async getInsertQuery(params: {
+    item: NSDatabase.ITable;
+    columns: Array<NSDatabase.IColumn>;
+  }): Promise<string> {
+    const { item, columns } = params;
+    console.log(item, columns);
+
+    return new Promise(async (resolve, reject) => {
+      try {
+        (await this.connection).columns(
+          null,
+          item.schema,
+          item.label,
+          null,
+          function (err, res) {
+            if (err) {
+              console.log("ERROR", err);
+              reject("Error getting insert query.");
+              return;
+            }
+
+            console.log("RESULT", res);
+
+            // Start building the query
+            let insertQuery = `INSERT INTO "${item.schema}"."${
+              item.label
+            }" (${res.map((col) => col.COLUMN_NAME).join(", ")}) VALUES (`;
+
+            // Process columns
+            for (const [index, col] of res.entries()) {
+              insertQuery = insertQuery.concat(
+                `'\${${index + 1}:${col.COLUMN_NAME}:${col.TYPE_NAME}}', `
+              );
+            }
+
+            // Remove the trailing comma and space, then close the VALUES clause
+            insertQuery = insertQuery.slice(0, -2) + "')";
+            console.log("INSERT QUERY", insertQuery);
+
+            // Resolve the promise with the completed query
+            resolve(insertQuery);
+          }
+        );
+      } catch (error) {
+        console.error("Unexpected error:", error);
+        reject("Error during insert query generation.");
+      }
+    });
+  }
+
   /** if you need a different way to test your connection, you can set it here.
    * Otherwise by default we open and close the connection only
    */
