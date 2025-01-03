@@ -42,6 +42,11 @@
       "type": "string",
       "minLength": 1
     },
+    "password": {
+      "title": "Password",
+      "type": "string",
+      "minLength": 1
+    },
     "server": {
       "title": "Hostname",
       "type": "string",
@@ -53,5 +58,5 @@
       "minimum": 1
     }
   },
-  "required": ["server", "port", "username", "database"]
+  "required": ["server", "port", "username", "database", "password"]
 }
