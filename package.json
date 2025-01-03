@@ -1,0 +1,55 @@
+{
+  "name": "db2-sqltools",
+  "displayName": "Db2 Driver for SQLTools TEST",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "publisher": "mtxr",
+  "license": "MIT",
+  "repository": {},
+  "bugs": {},
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "keywords": [
+    "db2",
+    "sqltools-driver"
+  ],
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Formatters",
+    "Other"
+  ],
+  "extensionDependencies": [
+    "mtxr.sqltools"
+  ],
+  "activationEvents": [
+    "*",
+    "onLanguage:sql",
+    "onCommand:sqltools.*"
+  ],
+  "main": "./out/extension.js",
+  "dependencies": {
+    "@sqltools/base-driver": "latest",
+    "@sqltools/types": "latest",
+    "ibm_db": "^3.3.0",
+    "uuid": "^7.0.2"
+  },
+  "devDependencies": {
+    "@types/ibm_db": "^3.2.0",
+    "@types/node": "^14.0.9",
+    "@types/vscode": "^1.96.0",
+    "@vscode/vsce": "^3.2.1",
+    "typescript": "^5.7.2"
+  },
+  "vsce": {
+    "exclude": [
+      "node_modules/ibm_db"
+    ]
+  }
+}
