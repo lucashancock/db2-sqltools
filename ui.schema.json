@@ -5,15 +5,10 @@
     "database",
     "username",
     "usePassword",
-    "connectionMethod",
     "password",
-    "askForPassword",
     "file"
   ],
   "password": {
     "ui:widget": "password"
-  },
-  "askForPassword": {
-    "ui:widget": "hidden"
   }
 }

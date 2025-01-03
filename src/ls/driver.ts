@@ -69,7 +69,6 @@ export default class Db2Driver
     const protocol = "TCPIP";
     const username = this.credentials.username;
     const password = this.credentials.password;
-    this.credentials.askForPassword = false;
     const filepath = this.credentials.file;
     let connectionString = `DATABASE=${db};HOSTNAME=${hostname};PORT=${port};PROTOCOL=${protocol};UID=${username};PWD=${password};`;
     if (filepath && filepath.length !== 0) {

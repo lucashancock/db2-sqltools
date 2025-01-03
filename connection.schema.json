@@ -1,18 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Configuration",
   "type": "object",
   "definitions": {
     "username": {
       "title": "Username",
       "type": "string",
       "minLength": 1
-    },
-    "usePassword": {
-      "title": "Use password",
-      "type": "string",
-      "enum": ["Ask on connect", "Save as plaintext in settings"],
-      "default": "Save as plaintext in settings"
     },
     "password": {
       "title": "Password",
@@ -39,18 +32,6 @@
       "type": "string",
       "title": "SSL Certificate (leave blank if not needed)"
     },
-    "connectionMethod": {
-      "title": "Connect using",
-      "type": "string",
-      "minLength": 1,
-      "default": "Server and Port"
-    },
-    "usePassword": {
-      "title": "Use password",
-      "type": "string",
-      "enum": ["Ask on connect", "Save as plaintext in settings"],
-      "default": "Save as plaintext in settings"
-    },
     "database": {
       "title": "Database",
       "type": "string",
@@ -72,37 +53,5 @@
       "minimum": 1
     }
   },
-  "required": ["server", "port", "username", "database"],
-  "dependencies": {
-    "usePassword": {
-      "oneOf": [
-        {
-          "properties": {
-            "usePassword": {
-              "enum": ["Ask on connect"]
-            },
-            "askForPassword": {
-              "type": "boolean",
-              "default": true
-            }
-          }
-        },
-        {
-          "properties": {
-            "usePassword": {
-              "enum": ["Save as plaintext in settings"]
-            },
-            "askForPassword": {
-              "type": "boolean",
-              "default": false
-            },
-            "password": {
-              "$ref": "#/definitions/password"
-            }
-          },
-          "required": ["password"]
-        }
-      ]
-    }
-  }
+  "required": ["server", "port", "username", "database"]
 }
