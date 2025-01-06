@@ -8,7 +8,7 @@ Built and maintained by
 
 - macOS Silicon
 - Windows 10
-- MacOS Intel not natively supported
+- macOS Intel not natively supported
 
 ## Installing and Running
 
