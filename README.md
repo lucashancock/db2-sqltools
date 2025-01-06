@@ -3,12 +3,12 @@
 Built and maintained by
 
 - Lucas Hancock (lucashancock@ibm.com)
-- Daniel Hancock (daniel.hancock@ibm.com)
 
 ## Supported (Tested) Architectures
 
 - MacOS Silicon
 - Windows x86
+- MacOS Intel not natively supported
 
 ## Installing and Running
 
@@ -35,7 +35,6 @@ WIP
 ## Contact
 
 - Lucas Hancock (lucashancock@ibm.com)
-- Daniel Hancock (daniel.hancock@ibm.com)
 
 ## Contributing & Development Environment
 
