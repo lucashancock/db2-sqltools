@@ -2,25 +2,29 @@
 
 Built and maintained by
 
-- Lucas Hancock (lucashancock@ibm.com)
+- Lucas Hancock (lucas.hancock18@gmail.com)
 
 ## Supported (Tested) Architectures
 
-- MacOS Silicon
-- Windows x86
+- macOS Silicon
+- Windows 10
 - MacOS Intel not natively supported
 
 ## Installing and Running
 
-The driver depends on node package ibm_db. For supported architectures above, this package will prompt you to install upon first use. For MacOs Silicon, it will be installed in the following directory:
+The driver depends on node package ibm_db. For supported architectures above, this package will prompt you to install upon first use. For macOS Silicon, it will be installed in the following directory:
 
-`/Users/user/Library/Application Support/vscode-sqltools`
+`$HOME/Library/Application Support/vscode-sqltools`
 
 For Windows machines, it will be installed in the following directory:
 
 `C:\Users\user\AppData\Local\Code\...`
 
 You may also be prompted to enable a setting within SQLTools to acknowledge node runtime. Please select to enable. This is required for the driver to work. The purpose of this is to look on your machine for an up to date version of node to use as the runtime. The extension was built on the latest stable version of node (v23.4.0).
+
+## Issues
+
+Please submit any issues to: `https://github.com/lucashancock/db2-sqltools/issues`
 
 ## Requirements
 
@@ -34,7 +38,7 @@ WIP
 
 ## Contact
 
-- Lucas Hancock (lucashancock@ibm.com)
+- Lucas Hancock (lucas.hancock18@gmail.com)
 
 ## Contributing & Development Environment
 
